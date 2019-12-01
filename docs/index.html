@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="description" content="Description" />
+  <meta name="viewport"
+    content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+  <link rel="stylesheet" href="//unpkg.com/docsify/lib/themes/dark.css" id="dark" />
+  <!-- <link rel="stylesheet" href="//unpkg.com/docsify/lib/themes/vue.css"> -->
+  <link href="https://cdn.bootcss.com/animate.css/3.5.2/animate.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="./assets/prism/prism.css" />
+  <link rel="shortcut icon" href="./images/logo.svg" />
+
+  <title>前端社区</title>
+  <style>
+    .down {
+      width: 42px;
+      position: absolute;
+
+      top: 86%;
+      left: 50%;
+      margin-left: -21px;
+      /* margin-bottom: -60px; */
+      animation-duration: 5s;
+    }
+
+    p {
+      display: inline-block;
+      margin-right: 10px !important;
+    }
+
+    #changeItem {
+      background-color: #f44336;
+      /* Green */
+      border: none;
+      color: white;
+      padding: 8px 12px;
+      border-radius: 6px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+    }
+
+    #changeItem:hover {
+      background-color: #c23429;
+      border: none;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- <nav>
+        <a href="#/" ><strong>zhengzheng的简历<strong></a>
+        
+      </nav> -->
+
+  <input type="button" value="切换主题" id="changeItem" style="position:absolute;z-Index:10000;right:82px;top:26px;" />
+  <div id="app">
+  </div>
+
+  <script>
+    window.$docsify = {
+      name: '前端社区 ',
+      repo: 'https://github.com/zhao5840980',
+      coverpage: true,
+      coverpage: 'coverpage.md',
+      loadSidebar: true,
+      loadSidebar: 'sidebar.md',
+      loadNavbar: true,
+      loadNavbar: 'nav.md',
+      maxLevel: 3,
+      logo: './images/logo.svg',
+      search: {
+        maxAge: 86400000, // 过期时间，单位毫秒，默认一天
+        paths: 'auto',
+        // 支持本地化
+        placeholder: {
+          '/zh-cn/': '搜索',
+          '/': '搜索'
+        },
+        // 支持本地化
+        noData: {
+          '/zh-cn/': '找不到结果',
+          '/': 'No Results'
+        },
+        // 搜索标题的最大程级, 1 - 6
+        depth: 3
+      }
+    };
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script>
+    window.onload = function () {
+      var changItemBtn = document.getElementById('changeItem');
+      // console.log(changItemBtn);
+      var linkitem = document.getElementById('dark');
+      // console.log(linkitem);
+      changItemBtn.onclick = function () {
+        linkitem.href === 'https://unpkg.com/docsify/lib/themes/dark.css' ?
+          linkitem.href = 'https://unpkg.com/docsify/lib/themes/vue.css' :
+          linkitem.href = 'https://unpkg.com/docsify/lib/themes/dark.css';
+      };
+    };
+  </script>
+
+  <script src="https://cdn.bootcss.com/docsify/4.6.10/docsify.min.js"></script>
+  <script src="//unpkg.com/prismjs/components/prism-bash.js"></script>
+  <script src="//unpkg.com/prismjs/components/prism-diff.js"></script>
+  <script src="//unpkg.com/docsify/lib/plugins/search.js"></script>
+  <script src="//unpkg.com/docsify-copy-code"></script>
+  <script src="//unpkg.com/docsify/lib/plugins/zoom-image.js"></script>
+</body>
+
+</html>
