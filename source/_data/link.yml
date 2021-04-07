@@ -1,8 +1,0 @@
-class:
-  class_name: 友情鏈接
-  link_list:
-    1:
-      name: 文龙的blog
-      link: https://wenlongzhu.com/
-      avatar: src="hhttps://cdn.jsdelivr.net/gh/jerryc127/CDN@latest/Photo/avatar.png"
-      descr: 好友文龙的博客
