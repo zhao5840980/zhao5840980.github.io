@@ -6,7 +6,7 @@
   <link href="https://zhao5840980.github.io/atom.xml" rel="self"/>
   
   <link href="https://zhao5840980.github.io/"/>
-  <updated>2021-04-08T07:49:56.070Z</updated>
+  <updated>2021-04-12T09:21:48.593Z</updated>
   <id>https://zhao5840980.github.io/</id>
   
   <author>
@@ -15,6 +15,81 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Vue全家桶原理</title>
+    <link href="https://zhao5840980.github.io/2021/04/12/qian-duan/vue-quan-jia-tong-yuan-li/"/>
+    <id>https://zhao5840980.github.io/2021/04/12/qian-duan/vue-quan-jia-tong-yuan-li/</id>
+    <published>2021-04-12T02:13:51.000Z</published>
+    <updated>2021-04-12T09:21:48.593Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;Vue全家桶原理&quot;&gt;&lt;a href=&quot;#Vue全家桶原理&quot; class=&quot;headerlink&quot; title=&quot;Vue全家桶原理&quot;&gt;&lt;/a&gt;Vue全家桶原理&lt;/h2&gt;&lt;h2 id=&quot;1-Vue-router&quot;&gt;&lt;a href=&quot;#1-Vue-router&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="前端" scheme="https://zhao5840980.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+    <category term="前端" scheme="https://zhao5840980.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>记录生活-北漂1</title>
+    <link href="https://zhao5840980.github.io/2021/04/09/life/ji-lu-sheng-huo-bei-piao-1/"/>
+    <id>https://zhao5840980.github.io/2021/04/09/life/ji-lu-sheng-huo-bei-piao-1/</id>
+    <published>2021-04-09T12:13:04.000Z</published>
+    <updated>2021-04-12T11:56:45.980Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;春天来了。。。。上图&quot;&gt;&lt;a href=&quot;#春天来了。。。。上图&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="生活" scheme="https://zhao5840980.github.io/categories/%E7%94%9F%E6%B4%BB/"/>
+    
+    
+    <category term="生活" scheme="https://zhao5840980.github.io/tags/%E7%94%9F%E6%B4%BB/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Vue组件化实践</title>
+    <link href="https://zhao5840980.github.io/2021/04/09/qian-duan/vue-zu-jian-hua-shi-jian/"/>
+    <id>https://zhao5840980.github.io/2021/04/09/qian-duan/vue-zu-jian-hua-shi-jian/</id>
+    <published>2021-04-09T01:07:07.000Z</published>
+    <updated>2021-04-12T02:08:29.894Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;组件通讯常用方式&quot;&gt;&lt;a href=&quot;#组件通讯常用方式&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="前端" scheme="https://zhao5840980.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+    <category term="前端" scheme="https://zhao5840980.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+  </entry>
   
   <entry>
     <title>Hexo博客主题之hexo-theme-matery的介绍</title>
