@@ -6,7 +6,7 @@
   <link href="https://zhao5840980.github.io/atom.xml" rel="self"/>
   
   <link href="https://zhao5840980.github.io/"/>
-  <updated>2021-04-12T09:21:48.593Z</updated>
+  <updated>2021-04-22T09:27:48.678Z</updated>
   <id>https://zhao5840980.github.io/</id>
   
   <author>
@@ -17,11 +17,89 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>TypeScript</title>
+    <link href="https://zhao5840980.github.io/2021/04/22/qian-duan/typescript/"/>
+    <id>https://zhao5840980.github.io/2021/04/22/qian-duan/typescript/</id>
+    <published>2021-04-22T07:40:24.000Z</published>
+    <updated>2021-04-22T09:27:48.678Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;调试环境&quot;&gt;&lt;a href=&quot;#调试环境&quot; class=&quot;headerlink&quot; title=&quot;调试环境&quot;&gt;&lt;/a&gt;调试环境&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;安装ts&lt;pre class=&quot;line-numbers language-bash&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="前端" scheme="https://zhao5840980.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+    <category term="前端" scheme="https://zhao5840980.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+    <category term="TypeScript" scheme="https://zhao5840980.github.io/tags/TypeScript/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>new Date().getTime()在IE下的兼容问题</title>
+    <link href="https://zhao5840980.github.io/2021/04/21/qian-duan/new-date-gettime-zai-ie-xia-de-jian-rong-wen-ti/"/>
+    <id>https://zhao5840980.github.io/2021/04/21/qian-duan/new-date-gettime-zai-ie-xia-de-jian-rong-wen-ti/</id>
+    <published>2021-04-21T03:03:40.000Z</published>
+    <updated>2021-04-21T09:25:37.621Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;背景&quot;&gt;&lt;a href=&quot;#背景&quot; class=&quot;headerlink&quot; title=&quot;背景&quot;&gt;&lt;/a&gt;背景&lt;/h2&gt;&lt;p&gt;项目中碰到后台返回时间类似2018-01-30 09:07:15这样的格式，使用new</summary>
+        
+      
+    
+    
+    
+    <category term="前端" scheme="https://zhao5840980.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+    <category term="前端" scheme="https://zhao5840980.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>服务端渲染</title>
+    <link href="https://zhao5840980.github.io/2021/04/16/qian-duan/fu-wu-duan-xuan-ran/"/>
+    <id>https://zhao5840980.github.io/2021/04/16/qian-duan/fu-wu-duan-xuan-ran/</id>
+    <published>2021-04-16T08:07:37.000Z</published>
+    <updated>2021-04-22T03:06:40.059Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;服务端渲染-SSR&quot;&gt;&lt;a href=&quot;#服务端渲染-SSR&quot; class=&quot;headerlink&quot; title=&quot;服务端渲染 SSR&quot;&gt;&lt;/a&gt;服务端渲染 SSR&lt;/h1&gt;&lt;h2 id=&quot;目标&quot;&gt;&lt;a href=&quot;#目标&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="前端" scheme="https://zhao5840980.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+    <category term="前端" scheme="https://zhao5840980.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Vue全家桶原理</title>
     <link href="https://zhao5840980.github.io/2021/04/12/qian-duan/vue-quan-jia-tong-yuan-li/"/>
     <id>https://zhao5840980.github.io/2021/04/12/qian-duan/vue-quan-jia-tong-yuan-li/</id>
     <published>2021-04-12T02:13:51.000Z</published>
-    <updated>2021-04-12T09:21:48.593Z</updated>
+    <updated>2021-04-16T06:39:07.506Z</updated>
     
     
       
@@ -71,7 +149,7 @@
     <link href="https://zhao5840980.github.io/2021/04/09/qian-duan/vue-zu-jian-hua-shi-jian/"/>
     <id>https://zhao5840980.github.io/2021/04/09/qian-duan/vue-zu-jian-hua-shi-jian/</id>
     <published>2021-04-09T01:07:07.000Z</published>
-    <updated>2021-04-12T02:08:29.894Z</updated>
+    <updated>2021-04-22T03:14:11.033Z</updated>
     
     
       
@@ -87,6 +165,8 @@
     <category term="前端" scheme="https://zhao5840980.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
     
     
+    <category term="Vue" scheme="https://zhao5840980.github.io/tags/Vue/"/>
+    
     <category term="前端" scheme="https://zhao5840980.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
     
   </entry>
@@ -96,14 +176,14 @@
     <link href="https://zhao5840980.github.io/2018/09/28/qian-duan/hexo-bo-ke-zhu-ti-zhi-hexo-theme-matery-de-jie-shao/"/>
     <id>https://zhao5840980.github.io/2018/09/28/qian-duan/hexo-bo-ke-zhu-ti-zhi-hexo-theme-matery-de-jie-shao/</id>
     <published>2018-09-28T05:34:00.000Z</published>
-    <updated>2021-04-08T07:49:56.070Z</updated>
+    <updated>2021-04-16T02:10:05.397Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;p&gt;&lt;a href=&quot;README.md&quot;&gt;English Document&lt;/a&gt; | &lt;a href=&quot;https://blinkfox.github.io/&quot;&gt;演示示例&lt;/a&gt; | QQ交流群:&lt;code&gt;926552981&lt;/code&gt;&lt;br&gt;&lt;img</summary>
+    <summary type="html">&lt;p&gt;&lt;a href=&quot;README.md&quot;&gt;English Document&lt;/a&gt; | &lt;a href=&quot;https://blinkfox.github.io/&quot;&gt;演示示例&lt;/a&gt; |</summary>
         
       
     

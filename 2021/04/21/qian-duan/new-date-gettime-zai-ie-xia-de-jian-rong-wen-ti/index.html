@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Vue组件化实践, 峥峥 zhengzheng">
+    <meta name="keywords" content="new Date().getTime()在IE下的兼容问题, 峥峥 zhengzheng">
     <meta name="description" content="从来没有真正的绝境，只有心灵的迷途">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Vue组件化实践 | zhengzheng</title>
+    <title>new Date().getTime()在IE下的兼容问题 | zhengzheng</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -226,12 +226,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/3.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/23.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Vue组件化实践</h1>
+                    <h1 class="description center-align post-title">new Date().getTime()在IE下的兼容问题</h1>
                 </div>
             </div>
         </div>
@@ -347,10 +347,6 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/Vue/">
-                                <span class="chip bg-color">Vue</span>
-                            </a>
-                        
                             <a href="/tags/%E5%89%8D%E7%AB%AF/">
                                 <span class="chip bg-color">前端</span>
                             </a>
@@ -376,7 +372,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-04-09
+                    2021-04-21
                 </div>
                 
 
@@ -385,14 +381,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1k
+                    158
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    4 分
+                    1 分
                 </div>
                 
 
@@ -412,181 +408,16 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="组件通讯常用方式"><a href="#组件通讯常用方式" class="headerlink" title="组件通讯常用方式"></a>组件通讯常用方式</h2><ul>
-<li>prop</li>
-<li>eventbus(事件总线)</li>
-<li>VueX</li>
-<li>自定义事件<ul>
-<li>边界情况<ul>
-<li>$parent</li>
-<li>$children</li>
-<li>$root</li>
-<li>$refs</li>
-<li>provide/inject</li>
-</ul>
-</li>
-<li>非prop特性  <ul>
-<li>$attrs</li>
-<li>$listeners</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h2 id="组件通讯"><a href="#组件通讯" class="headerlink" title="组件通讯"></a>组件通讯</h2><ol>
-<li><p>props</p>
-<p>父给子传值</p>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">//child</span>
-prop<span class="token operator">:</span> <span class="token punctuation">&#123;</span>msg<span class="token operator">:</span>String<span class="token punctuation">&#125;</span>
-<span class="token comment">//parent</span>
-<span class="token operator">&lt;</span>HelloWorld msg<span class="token operator">=</span><span class="token string">"Welcome to your vue.js App"</span><span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre></li>
-<li><p>自定义事件</p>
-<p>子给父传值</p>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">//child</span>
-<span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">$emit</span><span class="token punctuation">(</span><span class="token string">'add'</span><span class="token punctuation">,</span> good<span class="token punctuation">)</span>
-<span class="token comment">//parent</span>
-<span class="token operator">&lt;</span>Cart @add<span class="token operator">=</span><span class="token string">"CartAdd($event)"</span><span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>Cart<span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre></li>
-<li><p>事件总线</p>
-<blockquote>
-<p>任意两个组件之间传值常用事件总线或VueX的方式</p>
-</blockquote>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">class</span> <span class="token class-name">Bus</span> <span class="token punctuation">&#123;</span>
-  <span class="token function">constructor</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-    <span class="token keyword">this</span><span class="token punctuation">.</span>callback <span class="token operator">=</span> <span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span>
-  <span class="token punctuation">&#125;</span>
-  <span class="token function">$on</span><span class="token punctuation">(</span><span class="token parameter">name<span class="token punctuation">,</span> fn</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-    <span class="token keyword">this</span><span class="token punctuation">.</span>callback<span class="token punctuation">[</span>name<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>callback<span class="token punctuation">[</span>name<span class="token punctuation">]</span> <span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
-    <span class="token keyword">this</span><span class="token punctuation">.</span>callback<span class="token punctuation">[</span>name<span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>fn<span class="token punctuation">)</span>
-  <span class="token punctuation">&#125;</span>
-  <span class="token function">$emit</span><span class="token punctuation">(</span><span class="token parameter">name<span class="token punctuation">,</span> args</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-    <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>callback<span class="token punctuation">[</span>name<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
-      <span class="token keyword">this</span><span class="token punctuation">.</span>callback<span class="token punctuation">[</span>name<span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token parameter">cb</span> <span class="token operator">=></span> <span class="token function">cb</span><span class="token punctuation">(</span>args<span class="token punctuation">)</span><span class="token punctuation">)</span>
-    <span class="token punctuation">&#125;</span>
-  <span class="token punctuation">&#125;</span>
-<span class="token punctuation">&#125;</span>
+                <h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>项目中碰到后台返回时间类似2018-01-30 09:07:15这样的格式，使用new Date().getTime()将时间格式转成时间戳，但在IE出现兼容问题，具体错误为带“-”格式的时间无法被new Date()转成时间格式，返回NaN.</p>
+<h2 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h2><p>代码如下：</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">const</span> date <span class="token operator">=</span> <span class="token string">'2018-01-30 09:07:15'</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> timestamp <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span>date<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getTime</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//这里在ie下返回NaN,具体场景使用的是11.0版本</span>
 
-<span class="token comment">//main.js</span>
-<span class="token class-name">Vue</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span>$bus <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Bus</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token comment">//在Vue原型上添加新的属性$bus</span>
-<span class="token comment">// child2</span>
-<span class="token keyword">this</span><span class="token punctuation">.</span>$bus<span class="token punctuation">.</span><span class="token function">$emit</span><span class="token punctuation">(</span><span class="token string">'foo'</span><span class="token punctuation">)</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<blockquote>
-<p>实际项目中通常用Vue代替Bus,因为Vue已经实现了相应接口</p>
-</blockquote>
-</li>
-<li><p>VueX</p>
-<blockquote>
-<p>创建唯一的全局数据管理者store,通过它管理数据并通知组件状态变更</p>
-</blockquote>
-</li>
-<li><p>$parent/$root</p>
-<blockquote>
-<p>兄弟组件之间通讯可通过共同祖辈搭桥，$parent/$root</p>
-</blockquote>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">//brother1 -> 发布订阅模式（事件的派发者和监听者都是一个）</span>
-<span class="token keyword">this</span><span class="token punctuation">.</span>$parent<span class="token punctuation">.</span><span class="token function">$on</span><span class="token punctuation">(</span><span class="token string">'foo'</span><span class="token punctuation">,</span> handle<span class="token punctuation">)</span>
-<span class="token comment">//brother2</span>
-<span class="token keyword">this</span><span class="token punctuation">.</span>$parent<span class="token punctuation">.</span><span class="token function">$emit</span><span class="token punctuation">(</span><span class="token string">'foo'</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre></li>
-<li><p>$children</p>
-<blockquote>
-<p>父组件可以通过$children访问子组件实现父子通讯</p>
-</blockquote>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">//parent</span>
-<span class="token keyword">this</span><span class="token punctuation">.</span>$children<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span>xx <span class="token operator">=</span> <span class="token string">'xxx'</span>
-<span class="token comment">//注意： $children不能保证子元素顺序</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre></li>
-<li><p>$attrs/$listeners </p>
-<blockquote>
-<p>使用场景：父组件引用的子组件传参，子组件没有设置props,可以在子组件中使用$attrs获取对应的值，包含了父作用域中不作为prop被识别（且获取）的特性绑定（class和style除外），当一个组件没有声明任何prop时，这里会包含所有父作用域的绑定（class和style除外），并且可以通过v-bind=”$attrs” 传入内部组件 –在创建高级别的组件时非常有用</p>
-</blockquote>
-<blockquote>
-<p> $listeners会被展开并监听</p>
-</blockquote>
-<blockquote>
-<p>$listeners:应用场景:父组件中引入的子组件绑定了事件方法，在父组件执行对应的事件方法，子组件调用了父组件的回调方法，可以用在子组件v-on=”$listeners”</p>
-</blockquote>
-</li>
-</ol>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">//children: 并未在props中声明foo</span>
-<span class="token operator">&lt;</span>p<span class="token operator">></span><span class="token punctuation">&#123;</span><span class="token punctuation">&#123;</span> $attrs<span class="token punctuation">.</span>foo <span class="token punctuation">&#125;</span><span class="token punctuation">&#125;</span><span class="token operator">&lt;</span><span class="token operator">/</span>p<span class="token operator">></span>
-<span class="token comment">//parent</span>
-<span class="token operator">&lt;</span>HelloWorld foo <span class="token operator">=</span> <span class="token string">"foo"</span><span class="token operator">/</span><span class="token operator">></span>
+<span class="token comment">// 将上诉修改如下</span>
+<span class="token keyword">const</span> date <span class="token operator">=</span> <span class="token string">'2018-01-30 09:07:15'</span><span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span><span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">-</span><span class="token regex-delimiter">/</span><span class="token regex-flags">g</span></span><span class="token punctuation">,</span> <span class="token string">'/'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> timestamp <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span>date<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getTime</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<span class="token comment">// refs -> 获取子节点引用  </span>
-<span class="token comment">//parent</span>
-<span class="token operator">&lt;</span>HelloWorld ref <span class="token operator">=</span> <span class="token string">'hw'</span><span class="token operator">></span>
-<span class="token function">mounted</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
-  <span class="token keyword">this</span><span class="token punctuation">.</span>$refs<span class="token punctuation">.</span>hw<span class="token punctuation">.</span>xx <span class="token operator">=</span> <span class="token string">"XXX"</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<ol start="8">
-<li>provide(提供)/inject（注入，适合通用组件库开发）-&gt; 能够实现祖先和后代之间传值（只限于UI库的开发使用）<blockquote>
-<p>使用场景：老祖宗的组件想给子孙组件传值，依赖注入</p>
-</blockquote>
-</li>
-</ol>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">//ancestor</span>
-<span class="token function">provide</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-  <span class="token keyword">return</span> <span class="token punctuation">&#123;</span>foo<span class="token operator">:</span> <span class="token string">'foo'</span><span class="token punctuation">&#125;</span>
-<span class="token punctuation">&#125;</span>
-<span class="token comment">//descendant</span>
-inject<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">'foo'</span><span class="token punctuation">]</span>
-    <span class="token function">父：provide</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-      <span class="token keyword">return</span> <span class="token punctuation">&#123;</span>
-        foo<span class="token operator">:</span> <span class="token string">'f000000'</span>
-        comp<span class="token operator">:</span> <span class="token keyword">this</span> <span class="token comment">//当前组件的实例</span>
-      <span class="token punctuation">&#125;</span>
-    <span class="token punctuation">&#125;</span>
-    子：inject<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">'foo'</span><span class="token punctuation">]</span> <span class="token operator">|</span> inject<span class="token operator">:</span> <span class="token punctuation">&#123;</span>bar<span class="token operator">:</span> <span class="token punctuation">&#123;</span><span class="token keyword">from</span><span class="token punctuation">&#125;</span><span class="token punctuation">&#125;</span>
-<span class="token comment">// 如果provide儿子也声明了，孙子组件也一样会报错？解决方案： 起别名</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="2-插槽"><a href="#2-插槽" class="headerlink" title="2. 插槽"></a>2. 插槽</h2><blockquote>
-<p>插槽语法是Vue实现的内容分发API,用于复合组件开发，该技术在通用组件库开发中有大量应用</p>
-</blockquote>
-<ol>
-<li>匿名插槽（相当于一个坑位）<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">//comp1</span>
-<span class="token operator">&lt;</span>div<span class="token operator">></span>
-  <span class="token operator">&lt;</span>slot<span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>slot<span class="token operator">></span>
-<span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span>
-<span class="token comment">//parent</span>
-<span class="token operator">&lt;</span>comp<span class="token operator">></span>hello<span class="token operator">&lt;</span><span class="token operator">/</span>comp<span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
-<li>具名插槽<blockquote>
-<p>将内容分发到子组件指定位置</p>
-</blockquote>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">//conp2</span>
-<span class="token operator">&lt;</span>div<span class="token operator">></span>
-  <span class="token operator">&lt;</span>slot<span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>slot<span class="token operator">></span>
-  <span class="token operator">&lt;</span>slot name <span class="token operator">=</span> <span class="token string">"content"</span><span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>slot<span class="token operator">></span>
-<span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span>
-<span class="token comment">//parent</span>
-<span class="token operator">&lt;</span>comp2<span class="token operator">></span>
-  <span class="token operator">&lt;</span><span class="token operator">!</span><span class="token operator">--</span>默认插槽<span class="token keyword">default</span>做参数<span class="token operator">--</span><span class="token operator">></span>
-  <span class="token operator">&lt;</span>template v<span class="token operator">-</span>slot<span class="token operator">:</span> <span class="token keyword">default</span><span class="token operator">></span>具名插槽<span class="token operator">&lt;</span><span class="token operator">/</span>template<span class="token operator">></span>
-  <span class="token operator">&lt;</span><span class="token operator">!</span><span class="token operator">--</span>具名插槽用插槽名做参数<span class="token operator">--</span><span class="token operator">></span>
-  <span class="token operator">&lt;</span>template v<span class="token operator">-</span>slot<span class="token operator">:</span>content<span class="token operator">></span>内容。。。。<span class="token operator">&lt;</span><span class="token operator">/</span>template<span class="token operator">></span>
-<span class="token operator">&lt;</span><span class="token operator">/</span>comp2<span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
-<li>作用域插槽：<blockquote>
-<p>应用场景： 分发内容要用到子组件中的数据，</p>
-</blockquote>
-</li>
-</ol>
-<blockquote>
-<p>在父组件引用中，作用域插槽会给带有子组件的那个插槽，传一个上下文对象包含对应的数据</p>
-</blockquote>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">//com3</span>
-<span class="token operator">&lt;</span>div<span class="token operator">></span>
-  <span class="token operator">&lt;</span>slot <span class="token operator">:</span>foo <span class="token operator">=</span> <span class="token string">"foo"</span><span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>slot<span class="token operator">></span>
-<span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span>
-<span class="token comment">//parent</span>
-<span class="token operator">&lt;</span>com3<span class="token operator">></span>
-  <span class="token operator">&lt;</span><span class="token operator">!</span><span class="token operator">--</span>把v<span class="token operator">-</span>slot的值指定为作用域上下文对象<span class="token operator">--</span><span class="token operator">></span>
-  <span class="token operator">&lt;</span>template<span class="token operator">></span>
-    来自子组件数据：<span class="token punctuation">&#123;</span><span class="token punctuation">&#123;</span>slotProps<span class="token punctuation">.</span>foo<span class="token punctuation">&#125;</span><span class="token punctuation">&#125;</span>
-  <span class="token operator">&lt;</span><span class="token operator">/</span>template<span class="token operator">></span>
-<span class="token operator">&lt;</span><span class="token operator">/</span>com3<span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<blockquote>
-<p>什么时候使用具名插槽？作用域插槽？</p>
-</blockquote>
-<blockquote>
-<p>在声明的template数据中插槽的数据是来自腹肌组件还是子组件，如果来自子组件，则采用作用域插槽，反之使用其他类型的插槽</p>
-</blockquote>
+<p>问题解决，重点是将时间字符串的“-”替换成“/”就可以了</p>
 
                 
             </div>
@@ -613,7 +444,7 @@ inject<span class="token operator">:</span> <span class="token punctuation">[</s
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://zhao5840980.github.io/2021/04/09/qian-duan/vue-zu-jian-hua-shi-jian/">https://zhao5840980.github.io/2021/04/09/qian-duan/vue-zu-jian-hua-shi-jian/</a>
+                    <a href="https://zhao5840980.github.io/2021/04/21/qian-duan/new-date-gettime-zai-ie-xia-de-jian-rong-wen-ti/">https://zhao5840980.github.io/2021/04/21/qian-duan/new-date-gettime-zai-ie-xia-de-jian-rong-wen-ti/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -650,10 +481,6 @@ inject<span class="token operator">:</span> <span class="token punctuation">[</s
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            
-                                <a href="/tags/Vue/">
-                                    <span class="chip bg-color">Vue</span>
-                                </a>
                             
                                 <a href="/tags/%E5%89%8D%E7%AB%AF/">
                                     <span class="chip bg-color">前端</span>
@@ -830,13 +657,13 @@ inject<span class="token operator">:</span> <span class="token punctuation">[</s
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2021/04/09/life/ji-lu-sheng-huo-bei-piao-1/">
+                <a href="/2021/04/22/qian-duan/typescript/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="记录生活-北漂1">
+                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="TypeScript">
                         
-                        <span class="card-title">记录生活-北漂1</span>
+                        <span class="card-title">TypeScript</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -847,14 +674,14 @@ inject<span class="token operator">:</span> <span class="token punctuation">[</s
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-04-09
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-04-22
                         </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E7%94%9F%E6%B4%BB/" class="post-category">
-                                    生活
+                            <a href="/categories/%E5%89%8D%E7%AB%AF/" class="post-category">
+                                    前端
                                 </a>
                             
                             
@@ -864,8 +691,12 @@ inject<span class="token operator">:</span> <span class="token punctuation">[</s
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E7%94%9F%E6%B4%BB/">
-                        <span class="chip bg-color">生活</span>
+                    <a href="/tags/%E5%89%8D%E7%AB%AF/">
+                        <span class="chip bg-color">前端</span>
+                    </a>
+                    
+                    <a href="/tags/TypeScript/">
+                        <span class="chip bg-color">TypeScript</span>
                     </a>
                     
                 </div>
@@ -879,13 +710,13 @@ inject<span class="token operator">:</span> <span class="token punctuation">[</s
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2018/09/28/qian-duan/hexo-bo-ke-zhu-ti-zhi-hexo-theme-matery-de-jie-shao/">
+                <a href="/2021/04/16/qian-duan/fu-wu-duan-xuan-ran/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="Hexo博客主题之hexo-theme-matery的介绍">
+                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="服务端渲染">
                         
-                        <span class="card-title">Hexo博客主题之hexo-theme-matery的介绍</span>
+                        <span class="card-title">服务端渲染</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -896,7 +727,7 @@ inject<span class="token operator">:</span> <span class="token punctuation">[</s
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2018-09-28
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-04-16
                             </span>
                         <span class="publish-author">
                             
@@ -913,12 +744,8 @@ inject<span class="token operator">:</span> <span class="token punctuation">[</s
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Hexo/">
-                        <span class="chip bg-color">Hexo</span>
-                    </a>
-                    
-                    <a href="/tags/hexo-theme-matery/">
-                        <span class="chip bg-color">hexo-theme-matery</span>
+                    <a href="/tags/%E5%89%8D%E7%AB%AF/">
+                        <span class="chip bg-color">前端</span>
                     </a>
                     
                 </div>
